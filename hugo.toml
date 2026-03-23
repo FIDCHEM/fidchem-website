@@ -1,0 +1,52 @@
+baseURL = "https://fidchem.com/"
+title = "FIDCHEM"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en"
+    weight = 1
+    contentDir = "content/en"
+    [languages.en.params]
+      subtitle = "Advanced Water Purification Technologies"
+  [languages.es]
+    languageName = "Español"
+    languageCode = "es"
+    weight = 2
+    contentDir = "content/es"
+    [languages.es.params]
+      subtitle = "Tecnologías Avanzadas de Purificación de Agua"
+
+[params]
+  description = "Plasmochemical and sorptive solutions for industrial, municipal, and environmental water treatment."
+  whatsapp = "34600934899"
+  email = "info@fidchem.com"
+  location = "Tarragona, Spain"
+  ai_widget_enabled = true
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "#about"
+    weight = 1
+  [[menu.main]]
+    name = "Technologies"
+    url = "#technologies"
+    weight = 2
+  [[menu.main]]
+    name = "Applications"
+    url = "#applications"
+    weight = 3
+  [[menu.main]]
+    name = "AI Consultant"
+    url = "#consultant"
+    weight = 4
+  [[menu.main]]
+    name = "Contacts"
+    url = "/contacts/"
+    weight = 5
+
+[build]
+  writeStats = true
