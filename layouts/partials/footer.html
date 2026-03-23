@@ -1,0 +1,43 @@
+<footer class="site-footer" id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="footer-logo" href="{{ "/" | relLangURL }}">FID<span>CHEM</span></a>
+      <p class="footer-tagline">{{ .Site.Params.description }}</p>
+      <div class="footer-contact-item">
+        <span class="dot"></span>
+        <span>{{ .Site.Params.location }}</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="dot"></span>
+        <a href="https://wa.me/{{ .Site.Params.whatsapp }}">+{{ .Site.Params.whatsapp | replaceRE "(\\d{2})(\\d{3})(\\d{3})(\\d{3})" "$1 $2 $3 $4" }} (WhatsApp)</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">{{ if eq .Site.Language.Lang "es" }}Tecnologías{{ else }}Technologies{{ end }}</div>
+      <ul class="footer-links">
+        <li><a href="{{ "/technologies/pcdr/" | relLangURL }}">PCDR — Reduction</a></li>
+        <li><a href="{{ "/technologies/pcdo/" | relLangURL }}">PCDO — Oxidation</a></li>
+        <li><a href="{{ "/technologies/pcds/" | relLangURL }}">PCDS — Sterilization</a></li>
+        <li><a href="{{ "/technologies/gloio/" | relLangURL }}">GLOIO — Ion Exchange</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">{{ if eq .Site.Language.Lang "es" }}Aplicaciones{{ else }}Applications{{ end }}</div>
+      <ul class="footer-links">
+        <li><a href="#applications">Industrial &amp; Municipal</a></li>
+        <li><a href="#applications">Chemical Industry</a></li>
+        <li><a href="#applications">Pharmaceutical</a></li>
+        <li><a href="#applications">Medical &amp; Scientific</a></li>
+        <li><a href="#applications">Agriculture</a></li>
+        <li><a href="#applications">Drinking Water</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span class="footer-copy">© {{ now.Year }} FIDCHEM. All rights reserved.</span>
+    <a href="{{ "/privacy-policy/" | relLangURL }}" class="footer-policy">Privacy Policy</a>
+  </div>
+</footer>

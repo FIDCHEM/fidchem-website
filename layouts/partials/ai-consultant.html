@@ -1,0 +1,88 @@
+<div class="ai-inner">
+  <div class="ai-left">
+    <div class="ai-tag">{{ if eq .Site.Language.Lang "es" }}Consultoría con IA{{ else }}AI-Powered Consultation{{ end }}</div>
+    <h2 class="ai-h2">
+      {{ if eq .Site.Language.Lang "es" }}
+        Habla con nuestro<br>experto técnico.<br><em>En cualquier idioma.</em>
+      {{ else }}
+        Talk to our<br>technical expert.<br><em>In any language.</em>
+      {{ end }}
+    </h2>
+    <p class="ai-desc">
+      {{ if eq .Site.Language.Lang "es" }}
+        Describe tu desafío de tratamiento de agua y nuestro consultor de IA recomendará la combinación tecnológica adecuada y preparará una propuesta comercial personalizada.
+      {{ else }}
+        Describe your water treatment challenge and our AI consultant will recommend the right technology combination, provide preliminary sizing, and arrange a commercial proposal.
+      {{ end }}
+    </p>
+    <ul class="ai-features">
+      {{ if eq .Site.Language.Lang "es" }}
+        <li>Disponible 24/7, responde en tu idioma</li>
+        <li>Entrenado técnicamente en todos los procesos FIDCHEM</li>
+        <li>Recopila datos de tu proyecto para una propuesta a medida</li>
+        <li>Te conecta directamente con nuestros ingenieros</li>
+      {{ else }}
+        <li>Available 24/7, responds in your language</li>
+        <li>Technically trained on all FIDCHEM processes</li>
+        <li>Collects your project data for a tailored quote</li>
+        <li>Connects you directly with our engineers</li>
+      {{ end }}
+    </ul>
+    <div style="margin-top:32px">
+      <a href="https://wa.me/{{ .Site.Params.whatsapp }}" class="btn-primary" target="_blank" rel="noopener">
+        {{ if eq .Site.Language.Lang "es" }}WhatsApp directo →{{ else }}WhatsApp us directly →{{ end }}
+      </a>
+    </div>
+  </div>
+
+  <div class="ai-right">
+    <!--
+      ══════════════════════════════════════════════════════
+      AI CONSULTANT WIDGET
+      Replace the placeholder below with the embed code
+      from your current WordPress site's AI consultant plugin.
+
+      HOW TO FIND IT:
+      1. Go to your current fidchem.com WordPress admin
+      2. Find the plugin/widget that powers the AI chat
+      3. Copy its embed <script> or <iframe> code
+      4. Paste it here replacing this comment block
+
+      If you used a third-party service (e.g. Tidio, Crisp,
+      CustomGPT, Botpress, etc.) — just paste their widget
+      script tag here.
+
+      FALLBACK: If you cannot find the embed code, we will
+      rebuild the AI chat using Claude API directly.
+      ══════════════════════════════════════════════════════
+    -->
+    <div class="ai-widget-placeholder" id="ai-widget">
+      <div class="chat-window">
+        <div class="chat-msg ai">
+          <div class="chat-msg-label">FIDCHEM AI</div>
+          <div class="chat-msg-text">
+            {{ if eq .Site.Language.Lang "es" }}
+              ¡Hola! Soy el consultor técnico de FIDCHEM. Cuéntame sobre tu desafío de tratamiento de agua — tipo de contaminante, caudal e industria — y te recomendaré la solución adecuada.
+            {{ else }}
+              Hello! I'm FIDCHEM's technical consultant. Tell me about your water treatment challenge — contaminant type, flow rate, and industry — and I'll recommend the right solution.
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-row">
+        <input class="chat-input" type="text" id="chat-input-field"
+          placeholder="{{ if eq .Site.Language.Lang "es" }}Describe tu desafío de tratamiento de agua...{{ else }}Describe your water treatment challenge...{{ end }}">
+        <button class="chat-send" id="chat-send-btn">
+          {{ if eq .Site.Language.Lang "es" }}Enviar →{{ else }}Send →{{ end }}
+        </button>
+      </div>
+      <p class="chat-legal">
+        {{ if eq .Site.Language.Lang "es" }}
+          Al enviar aceptas nuestra <a href="/es/privacy-policy/">Política de Privacidad</a>
+        {{ else }}
+          By submitting you agree to our <a href="/privacy-policy/">Privacy Policy</a>
+        {{ end }}
+      </p>
+    </div>
+  </div>
+</div>

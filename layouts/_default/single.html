@@ -1,0 +1,55 @@
+{{ define "main" }}
+<article class="tech-page">
+  <div class="tech-page-header">
+    <div class="section-label">
+      <div class="section-label-text">{{ if eq .Site.Language.Lang "es" }}Tecnologías{{ else }}Technologies{{ end }}</div>
+    </div>
+    <div class="tech-page-hero">
+      <div class="tech-page-code">{{ .Params.code }}</div>
+      <h1 class="tech-page-title">{{ .Params.fullname }}</h1>
+      <p class="tech-page-summary">{{ .Params.summary }}</p>
+
+      {{ if .Params.contaminants }}
+      <div class="tech-page-tags">
+        {{ range .Params.contaminants }}
+        <span class="app-tag">{{ . }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="tech-page-body">
+    <div class="tech-page-content">
+      {{ .Content }}
+    </div>
+
+    <aside class="tech-page-aside">
+      <div class="aside-block">
+        <div class="aside-title">{{ if eq .Site.Language.Lang "es" }}Aplicaciones{{ else }}Applications{{ end }}</div>
+        {{ if .Params.applications }}
+        <ul class="aside-list">
+          {{ range .Params.applications }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </div>
+
+      <div class="aside-block">
+        <div class="aside-title">{{ if eq .Site.Language.Lang "es" }}Todas las tecnologías{{ else }}All Technologies{{ end }}</div>
+        {{ $pages := where .Site.RegularPages "Section" "technologies" }}
+        <ul class="aside-list aside-list--links">
+          {{ range (sort $pages ".Params.weight") }}
+          <li><a href="{{ .RelPermalink }}" class="{{ if eq . $ }}active{{ end }}">{{ .Params.code }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <a href="/#consultant" class="btn-primary" style="display:block;text-align:center;margin-top:24px">
+        {{ if eq .Site.Language.Lang "es" }}Obtener Presupuesto →{{ else }}Get a Quote →{{ end }}
+      </a>
+    </aside>
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,163 @@
+{{ define "main" }}
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">{{ if eq .Site.Language.Lang "es" }}Plasma y Tecnología de Intercambio Iónico{{ else }}Plasma &amp; Ion Exchange Technology{{ end }}</div>
+    <h1 class="hero-h1">
+      {{ if eq .Site.Language.Lang "es" }}
+        Purificación<br>Avanzada<br><em>del Agua</em>
+      {{ else }}
+        Advanced<br>Water<br><em>Purification</em>
+      {{ end }}
+    </h1>
+    <p class="hero-desc">
+      {{ if eq .Site.Language.Lang "es" }}
+        Soluciones plasmoquímicas y sorbentes para el tratamiento industrial, municipal y medioambiental del agua. Eliminación de PFAS/PFOS, dioxinas, patógenos y contaminantes persistentes mediante tecnología de descarga corona pulsada.
+      {{ else }}
+        Plasmochemical and sorptive solutions for industrial, municipal, and environmental water treatment. Removing PFAS/PFOS, dioxins, pathogens, and persistent pollutants using pulsed corona discharge technology.
+      {{ end }}
+    </p>
+    <div class="hero-actions">
+      <a href="#technologies" class="btn-primary">{{ if eq .Site.Language.Lang "es" }}Ver Tecnologías →{{ else }}Explore Technologies →{{ end }}</a>
+      <a href="#consultant" class="btn-secondary">{{ if eq .Site.Language.Lang "es" }}Consultor IA{{ else }}Talk to AI Consultant{{ end }}</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="plasma-bg">
+      <svg width="100%" height="100%" style="position:absolute;inset:0" aria-hidden="true">
+        <defs>
+          <radialGradient id="rg1" cx="50%" cy="50%"><stop offset="0%" stop-color="#3a86ff" stop-opacity="0.18"/><stop offset="100%" stop-color="#3a86ff" stop-opacity="0"/></radialGradient>
+          <radialGradient id="rg2" cx="50%" cy="50%"><stop offset="0%" stop-color="#00a878" stop-opacity="0.12"/><stop offset="100%" stop-color="#00a878" stop-opacity="0"/></radialGradient>
+        </defs>
+        <ellipse cx="50%" cy="50%" rx="45%" ry="45%" fill="url(#rg1)" class="plasma-pulse"/>
+        <ellipse cx="50%" cy="50%" rx="28%" ry="28%" fill="url(#rg2)" class="plasma-pulse plasma-pulse--delay"/>
+        <circle cx="50%" cy="50%" r="120" fill="none" stroke="rgba(58,134,255,0.07)" stroke-width="1" class="plasma-pulse"/>
+        <circle cx="50%" cy="50%" r="200" fill="none" stroke="rgba(58,134,255,0.05)" stroke-width="1" class="plasma-pulse plasma-pulse--delay"/>
+        <circle cx="50%" cy="50%" r="290" fill="none" stroke="rgba(58,134,255,0.03)" stroke-width="1" class="plasma-pulse"/>
+        <line x1="0" y1="50%" x2="100%" y2="50%" stroke="rgba(58,134,255,0.05)" stroke-width="1"/>
+        <line x1="50%" y1="0" x2="50%" y2="100%" stroke="rgba(58,134,255,0.05)" stroke-width="1"/>
+      </svg>
+    </div>
+    <div class="tech-quad">
+      {{ $techs := slice
+        (dict "code" "PCDR" "desc" "PFAS/PFOS · Dioxins" "url" "/technologies/pcdr/")
+        (dict "code" "PCDO" "desc" "Organics · Disinfection" "url" "/technologies/pcdo/")
+        (dict "code" "PCDS" "desc" "Pathogens · No chemistry" "url" "/technologies/pcds/")
+        (dict "code" "GLOIO" "desc" "Heavy metals · Nitrates" "url" "/technologies/gloio/")
+      }}
+      {{ range $techs }}
+      <a href="{{ .url | relLangURL }}" class="tech-quad-card">
+        <div class="tech-quad-code">{{ .code }}</div>
+        <div class="tech-quad-desc">{{ .desc }}</div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">4<span>×</span></div><div class="stat-label">{{ if eq .Site.Language.Lang "es" }}Tecnologías propietarias{{ else }}Proprietary technologies{{ end }}</div></div>
+  <div class="stat"><div class="stat-num">99<span>%+</span></div><div class="stat-label">{{ if eq .Site.Language.Lang "es" }}Mineralización PFAS/PFOS{{ else }}PFAS/PFOS mineralization{{ end }}</div></div>
+  <div class="stat"><div class="stat-num">6</div><div class="stat-label">{{ if eq .Site.Language.Lang "es" }}Sectores industriales{{ else }}Industry verticals served{{ end }}</div></div>
+  <div class="stat"><div class="stat-num">∞</div><div class="stat-label">{{ if eq .Site.Language.Lang "es" }}Consultor IA, cualquier idioma{{ else }}AI consultant, any language{{ end }}</div></div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<section class="section-about" id="about">
+  <div class="section-label"><div class="section-label-text">{{ if eq .Site.Language.Lang "es" }}Sobre FIDCHEM{{ else }}About FIDCHEM{{ end }}</div></div>
+  <div class="section-content">
+    <h2 class="section-h2">{{ if eq .Site.Language.Lang "es" }}Química e ingeniería<br>al servicio del agua limpia{{ else }}Chemistry and engineering<br>in service of clean water{{ end }}</h2>
+    <p class="section-body">
+      {{ if eq .Site.Language.Lang "es" }}
+        FIDCHEM aprovecha el poder de la tecnología de generadores nanosegundos de alta tensión en aplicaciones plasmoquímicas. Nuestros métodos utilizan descargas corona y barrera pulsadas nanosegundas en entornos tanto oxidativos como reductivos, combinados con preconcentración ultrarrápida de intercambio iónico, para purificar y desinfectar el agua de manera efectiva eliminando contaminantes nocivos.
+      {{ else }}
+        FIDCHEM harnesses the power of high-voltage nanosecond generator technology in plasmachemical applications. Our methods utilize nanosecond pulsed corona and barrier discharges in both oxidative and reductive environments, combined with ultra-fast ion exchange preconcentration, to effectively purify and disinfect water by removing harmful pollutants.
+        <br><br>
+        These technologies allow us to tackle a wide range of contaminants, ensuring cleaner and safer water for industrial, municipal, and environmental applications. We provide full-service turnkey design integrating our cutting-edge technologies with those of our industrial partners.
+      {{ end }}
+    </p>
+  </div>
+</section>
+
+<!-- ═══ TECHNOLOGIES ═══ -->
+<section class="section-tech" id="technologies">
+  <div class="section-header-row">
+    <div class="section-label"><div class="section-label-text">{{ if eq .Site.Language.Lang "es" }}Nuestras Tecnologías{{ else }}Our Technologies{{ end }}</div></div>
+    <div class="section-content">
+      <h2 class="section-h2">{{ if eq .Site.Language.Lang "es" }}Cuatro procesos propietarios.<br>Una solución completa.{{ else }}Four proprietary processes.<br>One complete solution.{{ end }}</h2>
+    </div>
+  </div>
+
+  <div class="tech-grid">
+    {{ $pages := where .Site.RegularPages "Section" "technologies" }}
+    {{ range (sort $pages ".Params.weight") }}
+    <a class="tech-item" href="{{ .RelPermalink }}">
+      <div class="tech-item-code">{{ .Params.code }}</div>
+      <div class="tech-item-full">{{ .Params.fullname }}</div>
+      <p class="tech-item-desc">{{ .Params.summary }}</p>
+      <span class="tech-item-arrow">→</span>
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+<!-- ═══ APPLICATIONS ═══ -->
+<section class="section-apps" id="applications">
+  <div class="section-header-row">
+    <div class="section-label"><div class="section-label-text">{{ if eq .Site.Language.Lang "es" }}Aplicaciones{{ else }}Applications{{ end }}</div></div>
+    <div class="section-content">
+      <h2 class="section-h2">{{ if eq .Site.Language.Lang "es" }}Desafíos complejos del agua<br>en seis industrias{{ else }}Solving complex water challenges<br>across six industries{{ end }}</h2>
+    </div>
+  </div>
+
+  <div class="apps-grid">
+    {{ $apps := slice
+      (dict "icon" "🏭" "title" "Industrial & Municipal" "title_es" "Industrial y Municipal"
+            "desc" "Treatment of highly contaminated wastewater, landfill leachate, and persistent pollutants including PFAS/PFOS and dioxins."
+            "desc_es" "Tratamiento de aguas residuales altamente contaminadas, lixiviados de vertederos y contaminantes persistentes incluidos PFAS/PFOS y dioxinas."
+            "tags" (slice "PCDR" "PCDO" "GLOIO"))
+      (dict "icon" "⚗️" "title" "Chemical Industry" "title_es" "Industria Química"
+            "desc" "Removing chlorinated/brominated organics, heavy metals, chromium (VI), arsenite/arsenate, solvents and dyes."
+            "desc_es" "Eliminación de orgánicos clorados/bromados, metales pesados, cromo (VI), arsenito/arsenato, disolventes y colorantes."
+            "tags" (slice "PCDO" "GLOIO"))
+      (dict "icon" "💊" "title" "Pharmaceutical" "title_es" "Industria Farmacéutica"
+            "desc" "Decontamination of wastewater loaded with antibiotics, hormones, toxic organic compounds and halogenated solvents."
+            "desc_es" "Descontaminación de aguas residuales con antibióticos, hormonas, compuestos orgánicos tóxicos y disolventes halogenados."
+            "tags" (slice "PCDR" "PCDO"))
+      (dict "icon" "🏥" "title" "Medical & Scientific" "title_es" "Médico y Científico"
+            "desc" "Hospital wastewater sterilization, biolab purification. Inactivates viruses, bacteria, fungi, protozoa and spores."
+            "desc_es" "Esterilización de aguas residuales hospitalarias, purificación de biolaboratorios. Inactiva virus, bacterias, hongos, protozoos y esporas."
+            "tags" (slice "PCDO" "PCDS"))
+      (dict "icon" "🌾" "title" "Agriculture" "title_es" "Agricultura"
+            "desc" "Sterile irrigation water for greenhouses, livestock decontamination, washing water for fruits and vegetables."
+            "desc_es" "Agua de riego estéril para invernaderos, descontaminación ganadera, agua de lavado de frutas y verduras."
+            "tags" (slice "PCDO" "PCDS" "GLOIO"))
+      (dict "icon" "🚰" "title" "Drinking Water" "title_es" "Agua Potable"
+            "desc" "Private and municipal water supply purification. Removing PFAS/PFOS, heavy metals, nitrates and chlorine."
+            "desc_es" "Purificación de suministro de agua privado y municipal. Eliminación de PFAS/PFOS, metales pesados, nitratos y cloro."
+            "tags" (slice "PCDR" "GLOIO"))
+    }}
+
+    {{ $lang := $.Site.Language.Lang }}
+    {{ range $apps }}
+    <div class="app-item">
+      <div class="app-icon">{{ .icon }}</div>
+      <div class="app-title">{{ if eq $lang "es" }}{{ .title_es }}{{ else }}{{ .title }}{{ end }}</div>
+      <p class="app-desc">{{ if eq $lang "es" }}{{ .desc_es }}{{ else }}{{ .desc }}{{ end }}</p>
+      <div class="app-tags">
+        {{ range .tags }}<span class="app-tag">{{ . }}</span>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<!-- ═══ AI CONSULTANT ═══ -->
+<section class="section-ai" id="consultant">
+  {{ partial "ai-consultant.html" . }}
+</section>
+
+{{ end }}

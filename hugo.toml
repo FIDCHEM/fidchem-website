@@ -1,5 +1,6 @@
 baseURL = "https://fidchem.com/"
 title = "FIDCHEM"
+theme = ""
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
@@ -24,6 +25,7 @@ defaultContentLanguageInSubdir = false
   whatsapp = "34600934899"
   email = "info@fidchem.com"
   location = "Tarragona, Spain"
+  # AI Consultant widget ID (from your current site)
   ai_widget_enabled = true
 
 [menu]
