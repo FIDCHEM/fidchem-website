@@ -1,6 +1,6 @@
 baseURL = "https://fidchem.com/"
 title = "FIDCHEM"
-theme = ""
+
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
