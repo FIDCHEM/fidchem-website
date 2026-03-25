@@ -3,6 +3,8 @@ title: "PCDS — Pulsed Corona Discharge Sterilization"
 code: "PCDS"
 fullname: "Pulsed Corona Discharge Sterilization"
 weight: 3
+icon_img: "pcds-icon.png"
+photo_img: "pcds-photo.png"
 summary: "Nitrogen-atmosphere plasma for full sterilization without altering water composition — no chemicals, no TOC oxidation."
 contaminants: ["Bacteria", "Viruses", "Fungi", "Protozoa", "Spores", "Pathogens"]
 applications: ["Pharmaceutical", "Medical & Scientific", "Biolab", "Agriculture"]

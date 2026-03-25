@@ -3,6 +3,8 @@ title: "PCDR — Pulsed Corona Discharge Reduction"
 code: "PCDR"
 fullname: "Pulsed Corona Discharge Reduction"
 weight: 1
+icon_img: "pcdr-icon.png"
+photo_img: "pcdr-photo.png"
 summary: "Reductive plasma treatment for eliminating halogenated pollutants: PFAS/PFOS, chlorophenols, and dioxins."
 contaminants: ["PFAS/PFOS", "Dioxins", "Chlorophenols", "Halogenated furans", "Short-chain PFAS"]
 applications: ["Industrial wastewater", "Landfill leachate", "Municipal water", "Drinking water"]

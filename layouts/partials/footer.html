@@ -1,7 +1,10 @@
 <footer class="site-footer" id="contact">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a class="footer-logo" href="{{ "/" | relLangURL }}">FID<span>CHEM</span></a>
+      <a class="footer-logo" href="{{ "/" | relLangURL }}">
+        <img src="{{ "img/logo.png" | relURL }}" alt="FIDCHEM" class="footer-logo-img">
+        <span class="footer-logo-text">FID<em>CHEM</em></span>
+      </a>
       <p class="footer-tagline">{{ .Site.Params.description }}</p>
       <div class="footer-contact-item">
         <span class="dot"></span>

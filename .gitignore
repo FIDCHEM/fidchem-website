@@ -1,1 +1,4 @@
 .DS_Store
+
+# Original (unoptimised) images archive — do not sync to Git
+imgs/ArchivedReplased-Photobank/

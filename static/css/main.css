@@ -4,15 +4,16 @@
    ═══════════════════════════════════════════════════ */
 
 :root {
-  --ink:        #0d1117;
-  --ink2:       #1c2333;
-  --paper:      #f4f1eb;
-  --paper2:     #ede9e0;
-  --accent:     #00a878;
-  --accent2:    #007a58;
-  --plasma:     #3a86ff;
-  --rule:       rgba(13,17,23,0.11);
-  --rule-s:     rgba(13,17,23,0.22);
+  /* Palette derived from FIDCHEM logo (navy + teal + aqua) */
+  --ink:        #0d1b29;   /* dark navy — logo's darkest shade */
+  --ink2:       #1a2e40;   /* mid navy */
+  --paper:      #f4f1eb;   /* warm off-white — unchanged */
+  --paper2:     #ece9e0;
+  --accent:     #2887a8;   /* logo teal-blue (dominant mid-tone) */
+  --accent2:    #1a6485;   /* darker teal */
+  --plasma:     #40a0d0;   /* logo light aqua (highlight) */
+  --rule:       rgba(13,27,41,0.11);
+  --rule-s:     rgba(13,27,41,0.22);
   --mono:       'Space Mono', monospace;
   --sans:       'DM Sans', sans-serif;
   --nav-h:      64px;
@@ -60,15 +61,26 @@ body::after {
 }
 
 .nav-logo {
-  font-family: var(--mono);
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   text-decoration: none;
   color: var(--ink);
   margin-right: auto;
 }
-.nav-logo span { color: var(--accent); }
+.nav-logo-img {
+  height: 38px;
+  width: 38px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.nav-logo-text {
+  font-family: var(--mono);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.nav-logo-text em { font-style: normal; color: var(--accent); }
 
 .nav-links {
   display: flex;
@@ -210,7 +222,7 @@ body::after {
 .hero-desc {
   font-size: 16px;
   line-height: 1.8;
-  color: rgba(13,17,23,0.6);
+  color: rgba(13,27,41,0.6);
   max-width: 480px;
   margin-bottom: 48px;
   font-weight: 300;
@@ -264,8 +276,8 @@ body::after {
   transition: background 0.25s, border-color 0.25s;
 }
 .tech-quad-card:hover {
-  background: rgba(0,168,120,0.14);
-  border-color: rgba(0,168,120,0.4);
+  background: rgba(40,135,168,0.14);
+  border-color: rgba(40,135,168,0.4);
 }
 
 .tech-quad-code {
@@ -307,7 +319,7 @@ body::after {
   color: var(--ink);
 }
 .stat-num span { color: var(--accent); }
-.stat-label { font-size: 13px; color: rgba(13,17,23,0.5); font-weight: 300; }
+.stat-label { font-size: 13px; color: rgba(13,27,41,0.5); font-weight: 300; }
 
 /* ══════════════════════════════════════════════
    SECTION LAYOUT
@@ -330,7 +342,7 @@ body::after {
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(13,17,23,0.35);
+  color: rgba(13,27,41,0.35);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
@@ -349,7 +361,7 @@ body::after {
 .section-body {
   font-size: 16px;
   line-height: 1.85;
-  color: rgba(13,17,23,0.6);
+  color: rgba(13,27,41,0.6);
   font-weight: 300;
   max-width: 680px;
 }
@@ -411,7 +423,7 @@ body::after {
 .tech-item-desc {
   font-size: 14px;
   line-height: 1.75;
-  color: rgba(13,17,23,0.58);
+  color: rgba(13,27,41,0.58);
   font-weight: 300;
   max-width: 380px;
 }
@@ -457,7 +469,7 @@ body::after {
   color: var(--ink);
   margin-bottom: 10px;
 }
-.app-desc { font-size: 13px; line-height: 1.7; color: rgba(13,17,23,0.55); font-weight: 300; }
+.app-desc { font-size: 13px; line-height: 1.7; color: rgba(13,27,41,0.55); font-weight: 300; }
 .app-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 16px; }
 .app-tag {
   font-family: var(--mono);
@@ -465,7 +477,7 @@ body::after {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent2);
-  background: rgba(0,168,120,0.1);
+  background: rgba(40,135,168,0.1);
   padding: 4px 8px;
   border-radius: 2px;
 }
@@ -567,9 +579,9 @@ body::after {
   border: 1px solid rgba(244,241,235,0.07);
 }
 .chat-msg.user .chat-msg-text {
-  background: rgba(0,168,120,0.15);
+  background: rgba(40,135,168,0.15);
   color: rgba(244,241,235,0.9);
-  border: 1px solid rgba(0,168,120,0.22);
+  border: 1px solid rgba(40,135,168,0.22);
 }
 .chat-input-row { display: flex; gap: 8px; }
 .chat-input {
@@ -584,7 +596,7 @@ body::after {
   outline: none;
   transition: border-color 0.2s;
 }
-.chat-input:focus { border-color: rgba(0,168,120,0.5); }
+.chat-input:focus { border-color: rgba(40,135,168,0.5); }
 .chat-input::placeholder { color: rgba(244,241,235,0.22); }
 .chat-send {
   font-family: var(--mono);
@@ -609,6 +621,21 @@ body::after {
   margin-top: 10px;
 }
 .chat-legal a { color: rgba(244,241,235,0.3); }
+
+/* ══════════════════════════════════════════════
+   TECH GRID — ICON
+══════════════════════════════════════════════ */
+.tech-item-icon-wrap {
+  margin-bottom: 20px;
+}
+.tech-item-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.tech-item:hover .tech-item-icon { opacity: 1; }
 
 /* ══════════════════════════════════════════════
    TECHNOLOGY SINGLE PAGE
@@ -650,6 +677,28 @@ body::after {
 }
 .tech-page-tags { display: flex; gap: 8px; flex-wrap: wrap; }
 
+/* Tech single page icon in header */
+.tech-page-icon-wrap { margin-bottom: 16px; }
+.tech-page-icon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  filter: brightness(0) invert(1) opacity(0.7);
+}
+
+/* Tech single page content photo */
+.tech-page-photo-wrap {
+  margin-bottom: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.tech-page-photo {
+  width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
 .tech-page-body {
   display: grid;
   grid-template-columns: 1fr 280px;
@@ -671,7 +720,7 @@ body::after {
 .tech-page-content p {
   font-size: 15px;
   line-height: 1.85;
-  color: rgba(13,17,23,0.65);
+  color: rgba(13,27,41,0.65);
   font-weight: 300;
   margin-bottom: 16px;
 }
@@ -684,7 +733,7 @@ body::after {
 .tech-page-content li {
   font-size: 15px;
   line-height: 1.7;
-  color: rgba(13,17,23,0.65);
+  color: rgba(13,27,41,0.65);
   font-weight: 300;
 }
 .tech-page-content table {
@@ -701,12 +750,12 @@ body::after {
   text-align: left;
   padding: 10px 16px;
   border-bottom: 2px solid var(--rule-s);
-  color: rgba(13,17,23,0.5);
+  color: rgba(13,27,41,0.5);
 }
 .tech-page-content td {
   padding: 12px 16px;
   border-bottom: 1px solid var(--rule);
-  color: rgba(13,17,23,0.7);
+  color: rgba(13,27,41,0.7);
 }
 .tech-page-content a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 
@@ -717,17 +766,17 @@ body::after {
   font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(13,17,23,0.35);
+  color: rgba(13,27,41,0.35);
   margin-bottom: 14px;
 }
 .aside-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.aside-list li { font-size: 13px; color: rgba(13,17,23,0.65); }
+.aside-list li { font-size: 13px; color: rgba(13,27,41,0.65); }
 .aside-list--links a {
   font-family: var(--mono);
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
-  color: rgba(13,17,23,0.5);
+  color: rgba(13,27,41,0.5);
   transition: color 0.2s;
 }
 .aside-list--links a:hover,
@@ -749,15 +798,26 @@ body::after {
   margin-bottom: 48px;
 }
 .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--paper);
+  margin-bottom: 14px;
+}
+.footer-logo-img {
+  height: 48px;
+  width: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1) opacity(0.9);
+}
+.footer-logo-text {
   font-family: var(--mono);
   font-size: 20px;
   font-weight: 700;
-  color: var(--paper);
-  text-decoration: none;
-  display: block;
-  margin-bottom: 14px;
 }
-.footer-logo span { color: var(--accent); }
+.footer-logo-text em { font-style: normal; color: var(--accent); }
 .footer-tagline {
   font-size: 13px;
   line-height: 1.7;

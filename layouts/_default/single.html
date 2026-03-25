@@ -5,6 +5,11 @@
       <div class="section-label-text">{{ if eq .Site.Language.Lang "es" }}Tecnologías{{ else }}Technologies{{ end }}</div>
     </div>
     <div class="tech-page-hero">
+      {{ if .Params.icon_img }}
+      <div class="tech-page-icon-wrap">
+        <img src="{{ printf "img/%s" .Params.icon_img | relURL }}" alt="{{ .Params.code }}" class="tech-page-icon">
+      </div>
+      {{ end }}
       <div class="tech-page-code">{{ .Params.code }}</div>
       <h1 class="tech-page-title">{{ .Params.fullname }}</h1>
       <p class="tech-page-summary">{{ .Params.summary }}</p>
@@ -21,6 +26,11 @@
 
   <div class="tech-page-body">
     <div class="tech-page-content">
+      {{ if .Params.photo_img }}
+      <div class="tech-page-photo-wrap">
+        <img src="{{ printf "img/%s" .Params.photo_img | relURL }}" alt="{{ .Params.fullname }}" class="tech-page-photo">
+      </div>
+      {{ end }}
       {{ .Content }}
     </div>
 
