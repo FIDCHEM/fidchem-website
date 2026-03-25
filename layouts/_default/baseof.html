@@ -8,18 +8,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
-{{ if .Site.IsServer }}<!-- DEV MODE -->{{ end }}
 </head>
 <body>
-
 {{- partial "nav.html" . -}}
-
 <main>
   {{- block "main" . }}{{- end }}
 </main>
-
 {{- partial "footer.html" . -}}
-
 <script src="{{ "js/main.js" | relURL }}"></script>
 </body>
 </html>
