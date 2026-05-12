@@ -38,10 +38,21 @@
         <li><a href="#applications">Drinking Water</a></li>
       </ul>
     </div>
+
+    <div class="footer-col">
+      <div class="footer-col-title">{{ if eq .Site.Language.Lang "es" }}Empresa{{ else }}Company{{ end }}</div>
+      <ul class="footer-links">
+        <li><a href="{{ "/contacts/" | relLangURL }}">{{ if eq .Site.Language.Lang "es" }}Contacto{{ else }}Contact{{ end }}</a></li>
+        <li><a href="{{ "/gep/" | relURL }}">Gender Equality Plan</a></li>
+      </ul>
+    </div>
   </div>
 
   <div class="footer-bottom">
     <span class="footer-copy">© {{ now.Year }} FIDCHEM. All rights reserved.</span>
-    <a href="{{ "/privacy-policy/" | relLangURL }}" class="footer-policy">Privacy Policy</a>
+    <div class="footer-legal-links">
+      <a href="{{ "/gep/" | relURL }}" class="footer-policy">GEP</a>
+      <a href="{{ "/privacy-policy/" | relLangURL }}" class="footer-policy">Privacy Policy</a>
+    </div>
   </div>
 </footer>

@@ -816,7 +816,7 @@ body::after {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 48px;
   margin-bottom: 48px;
 }
@@ -889,6 +889,7 @@ body::after {
 }
 .footer-policy { text-decoration: none; transition: color 0.2s; }
 .footer-policy:hover { color: var(--accent); }
+.footer-legal-links { display: flex; gap: 20px; align-items: center; }
 
 /* ══════════════════════════════════════════════
    ANIMATIONS
