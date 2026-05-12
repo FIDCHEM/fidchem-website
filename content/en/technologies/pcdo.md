@@ -4,7 +4,7 @@ code: "PCDO"
 fullname: "Pulsed Corona Discharge Oxidation"
 weight: 2
 icon_img: "pcdo-icon.png"
-photo_img: "pcdo-photo.png"
+photo_img: "pcdo-photo.jpg"
 summary: "Oxidative plasma for removal of refractory organic impurities, disinfection, and finishing treatment after PCDR."
 contaminants: ["Refractory organics", "Bacteria", "Viruses", "Fungi", "TOC", "Colour", "Odour"]
 applications: ["Industrial wastewater", "Chemical industry", "Pharmaceutical", "Medical", "Agriculture"]

@@ -460,6 +460,22 @@ body::after {
 .app-item:nth-child(6) { border-bottom: none; }
 .app-item:hover { background: var(--paper2); }
 
+.app-img-wrap {
+  width: calc(100% + 80px);
+  margin: -48px -40px 28px;
+  overflow: hidden;
+  height: 180px;
+}
+.app-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.35) brightness(0.92);
+  transition: filter 0.3s, transform 0.3s;
+}
+.app-item:hover .app-img { filter: grayscale(0) brightness(1); transform: scale(1.03); }
+
 .app-icon { font-size: 26px; margin-bottom: 14px; filter: grayscale(1); transition: filter 0.2s; }
 .app-item:hover .app-icon { filter: none; }
 .app-title {

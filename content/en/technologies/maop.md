@@ -3,6 +3,8 @@ title: "MAOP — Modified Advanced Oxidation Process"
 code: "MAOP"
 fullname: "Modified Advanced Oxidation Process"
 weight: 5
+icon_img: "maop-icon.png"
+photo_img: "maop-photo.jpg"
 summary: "Terminal destruction of persistent organic pollutants including PFAS via plasma-peroxy activation — without phase separation, pre-concentration, or pH adjustment."
 contaminants: ["PFAS/PFOS", "Persistent organic pollutants", "PFAS 50–1000 ppt"]
 applications: ["Industrial wastewater", "Drinking water", "Municipal water", "Flow-through systems"]

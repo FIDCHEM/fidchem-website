@@ -4,7 +4,7 @@ code: "GLOIO"
 fullname: "Globular Polymer Ion Exchange"
 weight: 4
 icon_img: "gloio-icon.png"
-photo_img: "gloio-photo.png"
+photo_img: "gloio-photo.jpg"
 summary: "Microporous globular polymer blocks with ion-exchange and chelating properties for ultra-fast adsorptive removal of PFAS/PFOS, heavy metals, dyes, and nitrates."
 contaminants: ["PFAS/PFOS", "Heavy metals", "Dyes", "Surfactants", "Nitrates", "Colour", "Iron(III)", "Chromium(VI)"]
 applications: ["Drinking water", "Industrial wastewater", "Chemical industry", "Agriculture"]

@@ -1,4 +1,7 @@
 .DS_Store
+.hugo_build.lock
+hugo_stats.json
+public/
 
 # Original (unoptimised) images archive — do not sync to Git
 imgs/ArchivedReplased-Photobank/
