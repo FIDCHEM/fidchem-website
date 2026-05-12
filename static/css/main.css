@@ -266,6 +266,12 @@ body::after {
   width: 100%;
   max-width: 440px;
 }
+/* 5th card: center it spanning both columns */
+.tech-quad-card:nth-child(5) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 1px);
+}
 
 .tech-quad-card {
   display: block;
@@ -388,8 +394,9 @@ body::after {
   transition: background 0.2s;
 }
 .tech-item:nth-child(2n) { border-right: none; }
-.tech-item:nth-child(3),
-.tech-item:nth-child(4) { border-bottom: none; }
+/* 5 technologies: items 4+5 are last two rows — only 5 has no bottom border;
+   item 5 alone in its row — also remove right border */
+.tech-item:nth-child(5) { border-bottom: none; border-right: none; }
 .tech-item:hover { background: var(--paper2); }
 
 .tech-item::before {
@@ -927,6 +934,7 @@ body::after {
   .app-item:nth-child(2n) { border-right: none; }
   .app-item:nth-child(5), .app-item:nth-child(6) { border-bottom: none; }
   .app-item { padding: 32px 20px; }
+  .app-img-wrap { width: calc(100% + 40px); margin: -32px -20px 20px; height: 140px; }
 
   .ai-inner { grid-template-columns: 1fr; }
   .ai-left { padding: 56px 24px; border-right: none; border-bottom: 1px solid rgba(244,241,235,0.08); }

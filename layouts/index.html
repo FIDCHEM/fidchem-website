@@ -46,6 +46,7 @@
         (dict "code" "PCDO" "desc" "Organics · Disinfection" "url" "/technologies/pcdo/")
         (dict "code" "PCDS" "desc" "Pathogens · No chemistry" "url" "/technologies/pcds/")
         (dict "code" "GLOIO" "desc" "Heavy metals · Nitrates" "url" "/technologies/gloio/")
+        (dict "code" "MAOP" "desc" "PFAS destruction · No phases" "url" "/technologies/maop/")
       }}
       {{ range $techs }}
       <a href="{{ .url | relLangURL }}" class="tech-quad-card">
@@ -59,7 +60,7 @@
 
 <!-- ═══ STATS ═══ -->
 <div class="stats-bar">
-  <div class="stat"><div class="stat-num">4<span>×</span></div><div class="stat-label">{{ if eq .Site.Language.Lang "es" }}Tecnologías propietarias{{ else }}Proprietary technologies{{ end }}</div></div>
+  <div class="stat"><div class="stat-num">5<span>×</span></div><div class="stat-label">{{ if eq .Site.Language.Lang "es" }}Tecnologías propietarias{{ else }}Proprietary technologies{{ end }}</div></div>
   <div class="stat"><div class="stat-num">99<span>%+</span></div><div class="stat-label">{{ if eq .Site.Language.Lang "es" }}Mineralización PFAS/PFOS{{ else }}PFAS/PFOS mineralization{{ end }}</div></div>
   <div class="stat"><div class="stat-num">6</div><div class="stat-label">{{ if eq .Site.Language.Lang "es" }}Sectores industriales{{ else }}Industry verticals served{{ end }}</div></div>
   <div class="stat"><div class="stat-num">∞</div><div class="stat-label">{{ if eq .Site.Language.Lang "es" }}Consultor IA, cualquier idioma{{ else }}AI consultant, any language{{ end }}</div></div>
@@ -87,7 +88,7 @@
   <div class="section-header-row">
     <div class="section-label"><div class="section-label-text">{{ if eq .Site.Language.Lang "es" }}Nuestras Tecnologías{{ else }}Our Technologies{{ end }}</div></div>
     <div class="section-content">
-      <h2 class="section-h2">{{ if eq .Site.Language.Lang "es" }}Cuatro procesos propietarios.<br>Una solución completa.{{ else }}Four proprietary processes.<br>One complete solution.{{ end }}</h2>
+      <h2 class="section-h2">{{ if eq .Site.Language.Lang "es" }}Cinco procesos propietarios.<br>Una solución completa.{{ else }}Five proprietary processes.<br>One complete solution.{{ end }}</h2>
     </div>
   </div>
 
