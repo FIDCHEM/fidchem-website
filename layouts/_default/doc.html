@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="doc-page">
+  <div class="doc-header">
+    <div class="section-label">
+      <div class="section-label-text">{{ if eq .Site.Language.Lang "es" }}Documentos{{ else }}Documents{{ end }}</div>
+    </div>
+    <div class="doc-header-inner">
+      <h1 class="doc-title">{{ .Title }}</h1>
+      {{ with .Params.subtitle }}<p class="doc-subtitle">{{ . }}</p>{{ end }}
+      {{ with .Params.pdf }}
+      <a class="doc-download" href="{{ . | relURL }}" download>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M8 1v9M4 7l4 4 4-4M2 14h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        {{ if eq .Site.Language.Lang "es" }}Descargar PDF{{ else }}Download PDF{{ end }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="doc-body">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}
