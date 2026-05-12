@@ -1,8 +1,8 @@
 ---
 title: "Gender Equality Plan (GEP)"
 subtitle: "FIDCHEM S.L."
-layout: "doc"
-url: "/gep/"
+type: "doc"
+slug: "gep"
 pdf: "files/fidchem-gep.pdf"
 description: "FIDCHEM S.L. Gender Equality Plan — establishing principles, governance, and concrete actions ensuring equal opportunities regardless of gender, in line with Horizon Europe requirements."
 ---
