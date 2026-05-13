@@ -35,4 +35,4 @@ GLOIO filter blocks are manufactured from **microporous globular polymers** poss
 
 ## Get a quote
 
-Describe your challenge to our [AI Consultant](#consultant) or [contact us directly](/contacts/).
+Describe your challenge to our [AI Consultant](/#consultant) or [contact us directly](/contacts/).

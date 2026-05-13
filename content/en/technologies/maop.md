@@ -26,6 +26,10 @@ Unlike phase-separation technologies (GAC, IX, RO) that merely concentrate pollu
 
 **Mineralization Pathway** — Resultant intermediate chains undergo rapid decarboxylation and further oxidation. The primary end-products are **fluoride ions and CO₂** — no persistent byproducts.
 
+<div class="tech-page-photo-wrap" style="margin:32px 0">
+  <img src="/img/maop-proc.jpg" alt="MAOP process diagram" class="tech-page-photo">
+</div>
+
 ## Engineering specifications & performance
 
 | Parameter | Value |
@@ -53,4 +57,4 @@ Unlike phase-separation technologies (GAC, IX, RO) that merely concentrate pollu
 
 ## Get a quote
 
-Describe your contamination challenge to our [AI Consultant](#consultant) or [contact us directly](/contacts/).
+Describe your contamination challenge to our [AI Consultant](/#consultant) or [contact us directly](/contacts/).

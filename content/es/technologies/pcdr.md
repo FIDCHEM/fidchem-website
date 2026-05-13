@@ -21,4 +21,4 @@ PCDR utiliza descarga corona pulsada en una **atmósfera reductora** para destru
 
 ## Obtener presupuesto
 
-Describe tu desafío a nuestro [Consultor IA](#consultant) o [contáctanos directamente](/es/contacts/).
+Describe tu desafío a nuestro [Consultor IA](/es/#consultant) o [contáctanos directamente](/es/contacts/).

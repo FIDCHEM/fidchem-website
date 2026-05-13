@@ -24,4 +24,4 @@ PCDS operates in a **nitrogen atmosphere**, generating reactive nitrogen species
 
 ## Get a quote
 
-Describe your challenge to our [AI Consultant](#consultant) or [contact us directly](/contacts/).
+Describe your challenge to our [AI Consultant](/#consultant) or [contact us directly](/contacts/).

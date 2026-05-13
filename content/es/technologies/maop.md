@@ -26,6 +26,10 @@ A diferencia de las tecnologías de separación de fase (GAC, IX, OI) que solo c
 
 **Vía de mineralización** — Las cadenas intermedias resultantes sufren rápida descarboxilación y posterior oxidación. Los productos finales principales son **iones fluoruro y CO₂** — sin subproductos persistentes.
 
+<div class="tech-page-photo-wrap" style="margin:32px 0">
+  <img src="/img/maop-proc.jpg" alt="Diagrama del proceso MAOP" class="tech-page-photo">
+</div>
+
 ## Especificaciones de ingeniería y rendimiento
 
 | Parámetro | Valor |
@@ -53,4 +57,4 @@ A diferencia de las tecnologías de separación de fase (GAC, IX, OI) que solo c
 
 ## Solicitar presupuesto
 
-Describa su reto de contaminación a nuestro [Consultor IA](#consultant) o [contáctenos directamente](/es/contacts/).
+Describa su reto de contaminación a nuestro [Consultor IA](/es/#consultant) o [contáctenos directamente](/es/contacts/).
