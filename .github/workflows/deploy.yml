@@ -1,9 +1,14 @@
-name: Deploy to Cloudflare Pages
+# GitHub Actions deploy is DISABLED — Cloudflare Pages deploys automatically
+# via its native GitHub integration (configured in the Cloudflare Pages dashboard).
+# This file is kept only as a reference.
+#
+# To re-enable: add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID to repo secrets
+# and restore the 'push' trigger below.
+
+name: Deploy to Cloudflare Pages (manual only)
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+  workflow_dispatch:  # only runs when triggered manually from GitHub Actions UI
 
 jobs:
   deploy:
