@@ -56,7 +56,7 @@
         </ul>
       </div>
 
-      <a href="/#consultant" class="btn-primary" style="display:block;text-align:center;margin-top:24px">
+      <a href="{{ "/" | relLangURL }}#consultant" class="btn-primary" style="display:block;text-align:center;margin-top:24px">
         {{ if eq .Site.Language.Lang "es" }}Obtener Presupuesto →{{ else }}Get a Quote →{{ end }}
       </a>
     </aside>
