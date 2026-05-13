@@ -4,16 +4,16 @@
    ═══════════════════════════════════════════════════ */
 
 :root {
-  /* Palette derived from FIDCHEM logo (navy + teal + aqua) */
-  --ink:        #0d1b29;   /* dark navy — logo's darkest shade */
-  --ink2:       #1a2e40;   /* mid navy */
-  --paper:      #f4f1eb;   /* warm off-white — unchanged */
-  --paper2:     #ece9e0;
-  --accent:     #2887a8;   /* logo teal-blue (dominant mid-tone) */
-  --accent2:    #1a6485;   /* darker teal */
-  --plasma:     #40a0d0;   /* logo light aqua (highlight) */
-  --rule:       rgba(13,27,41,0.11);
-  --rule-s:     rgba(13,27,41,0.22);
+  /* Palette from fidchem.com — cobalt blue brand */
+  --ink:        #0f172a;   /* dark navy (headings) */
+  --ink2:       #364151;   /* dark gray-blue (body text) */
+  --paper:      #ffffff;   /* white */
+  --paper2:     #e7f6ff;   /* light blue tint (subtle backgrounds) */
+  --accent:     #0067ff;   /* primary cobalt blue */
+  --accent2:    #004080;   /* dark cobalt */
+  --plasma:     #3385ff;   /* light cobalt (highlights) */
+  --rule:       rgba(15,23,42,0.10);
+  --rule-s:     rgba(15,23,42,0.22);
   --mono:       'Space Mono', monospace;
   --sans:       'DM Sans', sans-serif;
   --nav-h:      64px;
@@ -222,7 +222,7 @@ body::after {
 .hero-desc {
   font-size: 16px;
   line-height: 1.8;
-  color: rgba(13,27,41,0.6);
+  color: rgba(15,23,42,0.6);
   max-width: 480px;
   margin-bottom: 48px;
   font-weight: 300;
@@ -240,7 +240,7 @@ body::after {
 
 .hero-right {
   position: relative;
-  background: var(--ink);
+  background: var(--ink) url('/img/hero-bg.jpg') center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -276,14 +276,14 @@ body::after {
 .tech-quad-card {
   display: block;
   text-decoration: none;
-  background: rgba(244,241,235,0.04);
-  border: 1px solid rgba(244,241,235,0.09);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
   padding: 28px 22px;
   transition: background 0.25s, border-color 0.25s;
 }
 .tech-quad-card:hover {
-  background: rgba(40,135,168,0.14);
-  border-color: rgba(40,135,168,0.4);
+  background: rgba(0,103,255,0.10);
+  border-color: rgba(0,103,255,0.35);
 }
 
 .tech-quad-code {
@@ -297,7 +297,7 @@ body::after {
 .tech-quad-desc {
   font-family: var(--mono);
   font-size: 10px;
-  color: rgba(244,241,235,0.35);
+  color: rgba(255,255,255,0.35);
   letter-spacing: 0.05em;
   line-height: 1.5;
 }
@@ -325,7 +325,7 @@ body::after {
   color: var(--ink);
 }
 .stat-num span { color: var(--accent); }
-.stat-label { font-size: 13px; color: rgba(13,27,41,0.5); font-weight: 300; }
+.stat-label { font-size: 13px; color: rgba(15,23,42,0.5); font-weight: 300; }
 
 /* ══════════════════════════════════════════════
    SECTION LAYOUT
@@ -348,7 +348,7 @@ body::after {
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(13,27,41,0.35);
+  color: rgba(15,23,42,0.35);
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
@@ -367,7 +367,7 @@ body::after {
 .section-body {
   font-size: 16px;
   line-height: 1.85;
-  color: rgba(13,27,41,0.6);
+  color: rgba(15,23,42,0.6);
   font-weight: 300;
   max-width: 680px;
 }
@@ -430,7 +430,7 @@ body::after {
 .tech-item-desc {
   font-size: 14px;
   line-height: 1.75;
-  color: rgba(13,27,41,0.58);
+  color: rgba(15,23,42,0.58);
   font-weight: 300;
   max-width: 380px;
 }
@@ -492,7 +492,7 @@ body::after {
   color: var(--ink);
   margin-bottom: 10px;
 }
-.app-desc { font-size: 13px; line-height: 1.7; color: rgba(13,27,41,0.55); font-weight: 300; }
+.app-desc { font-size: 13px; line-height: 1.7; color: rgba(15,23,42,0.55); font-weight: 300; }
 .app-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 16px; }
 .app-tag {
   font-family: var(--mono);
@@ -500,7 +500,7 @@ body::after {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent2);
-  background: rgba(40,135,168,0.1);
+  background: rgba(0,103,255,0.07);
   padding: 4px 8px;
   border-radius: 2px;
 }
@@ -518,7 +518,7 @@ body::after {
 }
 .ai-left {
   padding: 80px 64px;
-  border-right: 1px solid rgba(244,241,235,0.08);
+  border-right: 1px solid rgba(255,255,255,0.08);
 }
 .ai-tag {
   font-family: var(--mono);
@@ -544,14 +544,14 @@ body::after {
 .ai-desc {
   font-size: 15px;
   line-height: 1.8;
-  color: rgba(244,241,235,0.5);
+  color: rgba(255,255,255,0.5);
   font-weight: 300;
   margin-bottom: 32px;
 }
 .ai-features { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 .ai-features li {
   font-size: 14px;
-  color: rgba(244,241,235,0.65);
+  color: rgba(255,255,255,0.65);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -568,8 +568,8 @@ body::after {
 /* Chat widget */
 .chat-window {
   flex: 1;
-  background: rgba(244,241,235,0.04);
-  border: 1px solid rgba(244,241,235,0.09);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
   border-radius: 4px;
   padding: 24px;
   display: flex;
@@ -587,7 +587,7 @@ body::after {
   font-size: 9px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(244,241,235,0.28);
+  color: rgba(255,255,255,0.28);
 }
 .chat-msg-text {
   font-size: 13px;
@@ -597,20 +597,20 @@ body::after {
   border-radius: 2px;
 }
 .chat-msg.ai .chat-msg-text {
-  background: rgba(244,241,235,0.07);
-  color: rgba(244,241,235,0.82);
-  border: 1px solid rgba(244,241,235,0.07);
+  background: rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.82);
+  border: 1px solid rgba(255,255,255,0.07);
 }
 .chat-msg.user .chat-msg-text {
-  background: rgba(40,135,168,0.15);
-  color: rgba(244,241,235,0.9);
-  border: 1px solid rgba(40,135,168,0.22);
+  background: rgba(0,103,255,0.10);
+  color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(0,103,255,0.18);
 }
 .chat-input-row { display: flex; gap: 8px; }
 .chat-input {
   flex: 1;
-  background: rgba(244,241,235,0.06);
-  border: 1px solid rgba(244,241,235,0.11);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.11);
   color: var(--paper);
   font-family: var(--sans);
   font-size: 13px;
@@ -619,8 +619,8 @@ body::after {
   outline: none;
   transition: border-color 0.2s;
 }
-.chat-input:focus { border-color: rgba(40,135,168,0.5); }
-.chat-input::placeholder { color: rgba(244,241,235,0.22); }
+.chat-input:focus { border-color: rgba(0,103,255,0.45); }
+.chat-input::placeholder { color: rgba(255,255,255,0.22); }
 .chat-send {
   font-family: var(--mono);
   font-size: 11px;
@@ -640,10 +640,10 @@ body::after {
   font-size: 11px;
   font-family: var(--mono);
   letter-spacing: 0.04em;
-  color: rgba(244,241,235,0.18);
+  color: rgba(255,255,255,0.18);
   margin-top: 10px;
 }
-.chat-legal a { color: rgba(244,241,235,0.3); }
+.chat-legal a { color: rgba(255,255,255,0.3); }
 
 /* ══════════════════════════════════════════════
    TECH GRID — ICON
@@ -671,8 +671,8 @@ body::after {
   background: var(--ink);
   color: var(--paper);
 }
-.tech-page-header .section-label { border-right: 1px solid rgba(244,241,235,0.1); }
-.tech-page-header .section-label-text { color: rgba(244,241,235,0.3); }
+.tech-page-header .section-label { border-right: 1px solid rgba(255,255,255,0.1); }
+.tech-page-header .section-label-text { color: rgba(255,255,255,0.3); }
 .tech-page-hero { padding: 72px 64px; }
 .tech-page-code {
   font-family: var(--mono);
@@ -686,14 +686,14 @@ body::after {
   font-family: var(--mono);
   font-size: clamp(18px, 2vw, 26px);
   font-weight: 400;
-  color: rgba(244,241,235,0.7);
+  color: rgba(255,255,255,0.7);
   letter-spacing: -0.02em;
   margin-bottom: 20px;
 }
 .tech-page-summary {
   font-size: 16px;
   line-height: 1.75;
-  color: rgba(244,241,235,0.55);
+  color: rgba(255,255,255,0.55);
   font-weight: 300;
   max-width: 600px;
   margin-bottom: 24px;
@@ -742,7 +742,7 @@ body::after {
 .tech-page-content p {
   font-size: 15px;
   line-height: 1.85;
-  color: rgba(13,27,41,0.65);
+  color: rgba(15,23,42,0.65);
   font-weight: 300;
   margin-bottom: 16px;
 }
@@ -755,7 +755,7 @@ body::after {
 .tech-page-content li {
   font-size: 15px;
   line-height: 1.7;
-  color: rgba(13,27,41,0.65);
+  color: rgba(15,23,42,0.65);
   font-weight: 300;
 }
 .tech-page-content table {
@@ -772,12 +772,12 @@ body::after {
   text-align: left;
   padding: 10px 16px;
   border-bottom: 2px solid var(--rule-s);
-  color: rgba(13,27,41,0.5);
+  color: rgba(15,23,42,0.5);
 }
 .tech-page-content td {
   padding: 12px 16px;
   border-bottom: 1px solid var(--rule);
-  color: rgba(13,27,41,0.7);
+  color: rgba(15,23,42,0.7);
 }
 .tech-page-content a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 
@@ -788,17 +788,17 @@ body::after {
   font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(13,27,41,0.35);
+  color: rgba(15,23,42,0.35);
   margin-bottom: 14px;
 }
 .aside-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.aside-list li { font-size: 13px; color: rgba(13,27,41,0.65); }
+.aside-list li { font-size: 13px; color: rgba(15,23,42,0.65); }
 .aside-list--links a {
   font-family: var(--mono);
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
-  color: rgba(13,27,41,0.5);
+  color: rgba(15,23,42,0.5);
   transition: color 0.2s;
 }
 .aside-list--links a:hover,
@@ -809,9 +809,9 @@ body::after {
 ══════════════════════════════════════════════ */
 .site-footer {
   background: var(--ink);
-  color: rgba(244,241,235,0.5);
+  color: rgba(255,255,255,0.5);
   padding: 64px 48px 48px;
-  border-top: 1px solid rgba(244,241,235,0.07);
+  border-top: 1px solid rgba(255,255,255,0.07);
 }
 .footer-grid {
   display: grid;
@@ -844,7 +844,7 @@ body::after {
   font-size: 13px;
   line-height: 1.7;
   font-weight: 300;
-  color: rgba(244,241,235,0.38);
+  color: rgba(255,255,255,0.38);
   margin-bottom: 20px;
 }
 .footer-contact-item {
@@ -862,13 +862,13 @@ body::after {
   font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(244,241,235,0.28);
+  color: rgba(255,255,255,0.28);
   margin-bottom: 18px;
 }
 .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .footer-links a {
   font-size: 14px;
-  color: rgba(244,241,235,0.45);
+  color: rgba(255,255,255,0.45);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -878,13 +878,13 @@ body::after {
   justify-content: space-between;
   align-items: center;
   padding-top: 28px;
-  border-top: 1px solid rgba(244,241,235,0.06);
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 .footer-copy, .footer-policy {
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.06em;
-  color: rgba(244,241,235,0.22);
+  color: rgba(255,255,255,0.22);
 }
 .footer-policy { text-decoration: none; transition: color 0.2s; }
 .footer-policy:hover { color: var(--accent); }
@@ -969,7 +969,7 @@ body::after {
 .doc-body p {
   font-size: 14px;
   line-height: 1.8;
-  color: rgba(13,27,41,0.72);
+  color: rgba(15,23,42,0.72);
   margin-bottom: 16px;
 }
 .doc-body ul {
@@ -980,7 +980,7 @@ body::after {
 .doc-body ul li {
   font-size: 14px;
   line-height: 1.8;
-  color: rgba(13,27,41,0.72);
+  color: rgba(15,23,42,0.72);
   padding-left: 20px;
   position: relative;
   margin-bottom: 4px;
@@ -1040,7 +1040,7 @@ body::after {
   .app-img-wrap { width: calc(100% + 40px); margin: -32px -20px 20px; height: 140px; }
 
   .ai-inner { grid-template-columns: 1fr; }
-  .ai-left { padding: 56px 24px; border-right: none; border-bottom: 1px solid rgba(244,241,235,0.08); }
+  .ai-left { padding: 56px 24px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
   .ai-right { padding: 40px 24px; }
 
   .tech-page-header { grid-template-columns: 1fr; }
