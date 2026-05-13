@@ -50,5 +50,10 @@ defaultContentLanguageInSubdir = false
     url = "/contacts/"
     weight = 5
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [build]
   writeStats = true
