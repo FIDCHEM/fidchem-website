@@ -18,7 +18,7 @@
   <!-- Language switcher -->
   <div class="lang-switch">
     {{ range .Site.Languages }}
-    <a href="{{ "/" | relLangURL }}" class="{{ if eq . $.Site.Language }}active{{ end }}">{{ .LanguageName | upper | truncate 2 "" }}</a>
+    <a href="{{ if eq .Lang "en" }}/{{ else }}/{{ .Lang }}/{{ end }}" class="{{ if eq .Lang $.Site.Language.Lang }}active{{ end }}">{{ .LanguageName | upper | truncate 2 "" }}</a>
     {{ end }}
   </div>
 </nav>

@@ -36,31 +36,11 @@
   </div>
 
   <div class="ai-right">
-    <!--
-      ══════════════════════════════════════════════════════
-      AI CONSULTANT WIDGET
-      Replace the placeholder below with the embed code
-      from your current WordPress site's AI consultant plugin.
-
-      HOW TO FIND IT:
-      1. Go to your current fidchem.com WordPress admin
-      2. Find the plugin/widget that powers the AI chat
-      3. Copy its embed <script> or <iframe> code
-      4. Paste it here replacing this comment block
-
-      If you used a third-party service (e.g. Tidio, Crisp,
-      CustomGPT, Botpress, etc.) — just paste their widget
-      script tag here.
-
-      FALLBACK: If you cannot find the embed code, we will
-      rebuild the AI chat using Claude API directly.
-      ══════════════════════════════════════════════════════
-    -->
     <div class="ai-widget-placeholder" id="ai-widget">
-      <div class="chat-window">
+      <div class="chat-window" id="chat-window">
         <div class="chat-msg ai">
           <div class="chat-msg-label">FIDCHEM AI</div>
-          <div class="chat-msg-text">
+          <div class="chat-msg-text" id="chat-greeting">
             {{ if eq .Site.Language.Lang "es" }}
               ¡Hola! Soy el consultor técnico de FIDCHEM. Cuéntame sobre tu desafío de tratamiento de agua — tipo de contaminante, caudal e industria — y te recomendaré la solución adecuada.
             {{ else }}
@@ -71,7 +51,8 @@
       </div>
       <div class="chat-input-row">
         <input class="chat-input" type="text" id="chat-input-field"
-          placeholder="{{ if eq .Site.Language.Lang "es" }}Describe tu desafío de tratamiento de agua...{{ else }}Describe your water treatment challenge...{{ end }}">
+          placeholder="{{ if eq .Site.Language.Lang "es" }}Describe tu desafío de tratamiento de agua...{{ else }}Describe your water treatment challenge...{{ end }}"
+          autocomplete="off">
         <button class="chat-send" id="chat-send-btn">
           {{ if eq .Site.Language.Lang "es" }}Enviar →{{ else }}Send →{{ end }}
         </button>
@@ -86,3 +67,131 @@
     </div>
   </div>
 </div>
+
+<script>
+(function () {
+  var API = 'https://fidchem.com:5000/chat';
+
+  // Generate or retrieve a persistent session ID
+  var userId;
+  try {
+    userId = localStorage.getItem('fidchem_uid');
+    if (!userId) {
+      userId = 'u_' + Math.random().toString(36).slice(2) + Date.now().toString(36);
+      localStorage.setItem('fidchem_uid', userId);
+    }
+  } catch (e) {
+    userId = 'u_' + Math.random().toString(36).slice(2);
+  }
+
+  var chatWindow = document.getElementById('chat-window');
+  var inputField = document.getElementById('chat-input-field');
+  var sendBtn   = document.getElementById('chat-send-btn');
+
+  function scrollBottom() {
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+  }
+
+  function appendMsg(role, text) {
+    var wrap = document.createElement('div');
+    wrap.className = 'chat-msg ' + role;
+
+    var label = document.createElement('div');
+    label.className = 'chat-msg-label';
+    label.textContent = role === 'ai' ? 'FIDCHEM AI' : 'You';
+
+    var bubble = document.createElement('div');
+    bubble.className = 'chat-msg-text';
+    bubble.textContent = text;
+
+    wrap.appendChild(label);
+    wrap.appendChild(bubble);
+    chatWindow.appendChild(wrap);
+    scrollBottom();
+    return bubble;
+  }
+
+  function setLoading(on) {
+    sendBtn.disabled = on;
+    inputField.disabled = on;
+  }
+
+  function showTyping() {
+    var wrap = document.createElement('div');
+    wrap.className = 'chat-msg ai';
+    wrap.id = 'chat-typing';
+
+    var label = document.createElement('div');
+    label.className = 'chat-msg-label';
+    label.textContent = 'FIDCHEM AI';
+
+    var bubble = document.createElement('div');
+    bubble.className = 'chat-msg-text chat-typing-dots';
+    bubble.innerHTML = '<span></span><span></span><span></span>';
+
+    wrap.appendChild(label);
+    wrap.appendChild(bubble);
+    chatWindow.appendChild(wrap);
+    scrollBottom();
+  }
+
+  function removeTyping() {
+    var el = document.getElementById('chat-typing');
+    if (el) el.parentNode.removeChild(el);
+  }
+
+  async function sendMessage() {
+    var text = inputField.value.trim();
+    if (!text) return;
+
+    appendMsg('user', text);
+    inputField.value = '';
+    setLoading(true);
+    showTyping();
+
+    try {
+      var fd = new FormData();
+      fd.append('message', text);
+      fd.append('userId', userId);
+
+      var resp = await fetch(API, { method: 'POST', body: fd });
+
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+
+      var data = await resp.json();
+      removeTyping();
+
+      var reply = (data && (data.response || data.message || data.reply || data.text))
+                    ? (data.response || data.message || data.reply || data.text)
+                    : JSON.stringify(data);
+      appendMsg('ai', reply);
+    } catch (err) {
+      removeTyping();
+      appendMsg('ai', 'Sorry, there was a connection issue. Please try WhatsApp or email us at info@fidchem.com.');
+    } finally {
+      setLoading(false);
+      inputField.focus();
+    }
+  }
+
+  sendBtn.addEventListener('click', sendMessage);
+  inputField.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  });
+})();
+</script>
+
+<style>
+.chat-typing-dots { display: flex; gap: 5px; align-items: center; padding: 4px 0; }
+.chat-typing-dots span {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  animation: chatDot 1.2s infinite ease-in-out;
+}
+.chat-typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.chat-typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes chatDot {
+  0%, 80%, 100% { transform: scale(0.7); opacity: 0.4; }
+  40%           { transform: scale(1);   opacity: 1; }
+}
+</style>
