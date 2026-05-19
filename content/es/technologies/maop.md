@@ -3,7 +3,7 @@ title: "MAOP — Proceso de Oxidación Avanzada Modificado"
 code: "MAOP"
 fullname: "Proceso de Oxidación Avanzada Modificado"
 weight: 5
-icon_img: "maop-photo.jpg"
+icon_img: "maop-icon.png"
 photo_img: "maop-photo.jpg"
 summary: "Destrucción terminal de contaminantes orgánicos persistentes incluidos los PFAS mediante activación plasma-peroxi — sin separación de fase, preconcentración ni ajuste de pH."
 contaminants: ["PFAS/PFOS", "Contaminantes orgánicos persistentes", "PFAS 50–1000 ppt"]
