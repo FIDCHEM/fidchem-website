@@ -3,19 +3,43 @@
    Edit colours in :root to change the entire site theme
    ═══════════════════════════════════════════════════ */
 
+/* ── SF PRO DISPLAY FONTS ── */
+@font-face {
+  font-family: 'sf-pro-display-bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/SFPRODISPLAYBOLD.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'sf-pro-display';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/SFPRODISPLAYMEDIUM.otf') format('opentype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'sf-pro-display';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/SFPRODISPLAYREGULAR.otf') format('opentype');
+  font-display: swap;
+}
+
 :root {
   /* Palette from fidchem.com — cobalt blue brand */
   --ink:        #0f172a;   /* dark navy (headings) */
-  --ink2:       #364151;   /* dark gray-blue (body text) */
+  --ink2:       #222222;   /* dark (body text) */
   --paper:      #ffffff;   /* white */
-  --paper2:     #e7f6ff;   /* light blue tint (subtle backgrounds) */
-  --accent:     #0067ff;   /* primary cobalt blue */
+  --paper2:     #EDF2F4;   /* light blue-gray (card backgrounds) */
+  --accent:     #0465C3;   /* primary cobalt blue */
   --accent2:    #004080;   /* dark cobalt */
-  --plasma:     #3385ff;   /* light cobalt (highlights) */
+  --sky:        #5FA8D3;   /* sky blue (icon borders, highlights) */
+  --plasma:     #3385ff;   /* light cobalt */
   --rule:       rgba(15,23,42,0.10);
   --rule-s:     rgba(15,23,42,0.22);
-  --mono:       'Space Mono', monospace;
-  --sans:       'DM Sans', sans-serif;
+  --mono:       'sf-pro-display-bold', Helvetica, Arial, sans-serif;
+  --sans:       'sf-pro-display', Helvetica, Arial, sans-serif;
   --nav-h:      64px;
 }
 
@@ -41,7 +65,7 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.5;
+  opacity: 0.35;
 }
 
 /* ══════════════════════════════════════════════
@@ -103,9 +127,9 @@ body::after {
 .nav-cta {
   opacity: 1 !important;
   color: var(--paper) !important;
-  background: var(--ink);
+  background: var(--accent);
   padding: 9px 18px;
-  border-radius: 2px;
+  border-radius: 5px;
   transition: background 0.2s !important;
 }
 .nav-cta:hover { background: var(--accent2) !important; }
@@ -152,18 +176,18 @@ body::after {
   gap: 8px;
   font-family: var(--mono);
   font-size: 12px;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 14px 26px;
-  border-radius: 2px;
+  padding: 13px 26px;
+  border-radius: 5px;
   cursor: pointer;
   border: none;
   transition: background 0.2s, transform 0.1s;
 }
 .btn-primary {
   color: var(--paper);
-  background: var(--ink);
+  background: var(--accent);
 }
 .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
 
@@ -171,8 +195,9 @@ body::after {
   color: var(--ink);
   background: transparent;
   border: 1px solid var(--rule-s);
+  border-radius: 5px;
 }
-.btn-secondary:hover { border-color: var(--ink); transform: translateY(-1px); }
+.btn-secondary:hover { border-color: var(--accent); transform: translateY(-1px); }
 
 /* ══════════════════════════════════════════════
    HERO
@@ -282,8 +307,8 @@ body::after {
   transition: background 0.25s, border-color 0.25s;
 }
 .tech-quad-card:hover {
-  background: rgba(0,103,255,0.10);
-  border-color: rgba(0,103,255,0.35);
+  background: rgba(4,101,195,0.12);
+  border-color: rgba(95,168,211,0.45);
 }
 
 .tech-quad-code {
@@ -500,7 +525,7 @@ body::after {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent2);
-  background: rgba(0,103,255,0.07);
+  background: rgba(4,101,195,0.08);
   padding: 4px 8px;
   border-radius: 2px;
 }
@@ -602,9 +627,9 @@ body::after {
   border: 1px solid rgba(255,255,255,0.07);
 }
 .chat-msg.user .chat-msg-text {
-  background: rgba(0,103,255,0.10);
+  background: rgba(4,101,195,0.12);
   color: rgba(255,255,255,0.9);
-  border: 1px solid rgba(0,103,255,0.18);
+  border: 1px solid rgba(95,168,211,0.25);
 }
 .chat-input-row { display: flex; gap: 8px; }
 .chat-input {
@@ -619,7 +644,7 @@ body::after {
   outline: none;
   transition: border-color 0.2s;
 }
-.chat-input:focus { border-color: rgba(0,103,255,0.45); }
+.chat-input:focus { border-color: rgba(95,168,211,0.55); }
 .chat-input::placeholder { color: rgba(255,255,255,0.22); }
 .chat-send {
   font-family: var(--mono);
@@ -652,13 +677,21 @@ body::after {
   margin-bottom: 20px;
 }
 .tech-item-icon {
-  width: 64px;
-  height: 64px;
+  width: 68px;
+  height: 68px;
   object-fit: contain;
-  opacity: 0.85;
-  transition: opacity 0.2s;
+  border: 2px solid var(--sky);
+  border-radius: 14px 14px 0 14px;
+  padding: 10px;
+  background: rgba(95,168,211,0.06);
+  opacity: 0.88;
+  transition: opacity 0.2s, border-color 0.2s, background 0.2s;
 }
-.tech-item:hover .tech-item-icon { opacity: 1; }
+.tech-item:hover .tech-item-icon {
+  opacity: 1;
+  border-color: var(--accent);
+  background: rgba(4,101,195,0.07);
+}
 
 /* ══════════════════════════════════════════════
    TECHNOLOGY SINGLE PAGE
@@ -701,12 +734,16 @@ body::after {
 .tech-page-tags { display: flex; gap: 8px; flex-wrap: wrap; }
 
 /* Tech single page icon in header */
-.tech-page-icon-wrap { margin-bottom: 16px; }
+.tech-page-icon-wrap { margin-bottom: 20px; }
 .tech-page-icon {
-  width: 72px;
-  height: 72px;
+  width: 76px;
+  height: 76px;
   object-fit: contain;
-  filter: brightness(0) invert(1) opacity(0.7);
+  border: 2px solid rgba(95,168,211,0.55);
+  border-radius: 14px 14px 0 14px;
+  padding: 10px;
+  background: rgba(95,168,211,0.08);
+  filter: brightness(0) invert(1) opacity(0.8);
 }
 
 /* Tech single page content photo */
